@@ -31,7 +31,11 @@ for(let link of links){
 
 function generateTitleLinks()
 {
-
-
-    
+ const AllTitles = document.querySelectorAll('.titles a') 
+ for(let alltitle of AllTitles){
+const titlAttribute = alltitle.getAttribute('href')
+alltitle.innerHTML = '<span>' + titlAttribute.replace('#', '') + '</span>';
 }
+
+}
+generateTitleLinks();
