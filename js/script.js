@@ -102,10 +102,11 @@ const tagsWrapper = article.querySelector(optArticleTagsSelector)
  /* split tags into array */
 const articleTagsArray = articleTags.split(' ');
  /* START LOOP: for each tag */
- for (let tag of articleTagsArray){}
- /* generate HTML of the link */ const h = '<a href=""'
+ for (let tag of articleTagsArray){
+ /* generate HTML of the link */ 
+ const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
  /* add generated code to html variable */
- html = html + h;
+ html = html + linkHTML;
  /* [NEW] check if this link is NOT already in allTags
 */
  if(allTags.indexOf(linkHTML) == -1){
@@ -113,8 +114,11 @@ const articleTagsArray = articleTags.split(' ');
  allTags.push(linkHTML);
  }
  /* END LOOP: for each tag */
+}
  /* insert HTML of all the links into the tags wrapper */
+tagsWrapper.innerHTML = html;
  /* END LOOP: for every article: */
+}
  /* [NEW] find list of tags in right column */
  const tagList = document.querySelector(optTagsListSelector);
  /* [NEW] add html from allTags to tagList */
