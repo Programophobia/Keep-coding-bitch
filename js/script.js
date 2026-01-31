@@ -109,10 +109,11 @@ const articleTagsArray = articleTags.split(' ');
  html = html + linkHTML;
  /* [NEW] check if this link is NOT already in allTags
 */
- if(allTags.indexOf(linkHTML) == -1){
+ if(!allTags.hasOwnProperty(tag)){
  /* [NEW] add generated code to allTags array */
- allTags.push(linkHTML);
- }
+ allTags[tag] = 1;
+ else {
+    allTags[tag]++;
  /* END LOOP: for each tag */
 }
  /* insert HTML of all the links into the tags wrapper */
