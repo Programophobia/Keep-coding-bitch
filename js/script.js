@@ -112,10 +112,11 @@ const articleTagsArray = articleTags.split(' ');
  if(!allTags.hasOwnProperty(tag)){
  /* [NEW] add generated code to allTags array */
  allTags[tag] = 1;
- else {
+ }else {
     allTags[tag]++;
  /* END LOOP: for each tag */
 }
+ }
  /* insert HTML of all the links into the tags wrapper */
 tagsWrapper.innerHTML = html;
  /* END LOOP: for every article: */
@@ -123,7 +124,15 @@ tagsWrapper.innerHTML = html;
  /* [NEW] find list of tags in right column */
  const tagList = document.querySelector(optTagsListSelector);
  /* [NEW] add html from allTags to tagList */
- tagList.innerHTML = allTags.join(' ');
+ //tagList.innerHTML = allTags.join(' ');
+ let allTagsHTML = '';
+ for(let tag in allTags){
+  allTagsHTML += '<li><a href="#tag-' + tag + '">' + tag + '(' + allTags[tag] + ')</a></li>';
+  console.log(tag, allTags[tag]);
+ }
+  
+
+  tagList.innerHTML = allTagsHTML;
 }
 generateTags();
 
