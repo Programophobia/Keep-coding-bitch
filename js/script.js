@@ -128,7 +128,7 @@ tagsWrapper.innerHTML = html;
  let allTagsHTML = '';
  for(let tag in allTags){
   allTagsHTML += '<li><a href="#tag-' + tag + '">' + tag + '(' + allTags[tag] + ')</a></li>';
-  console.log(tag, allTags[tag]);
+  console.log(allTagsHTML);
  }
   
 
