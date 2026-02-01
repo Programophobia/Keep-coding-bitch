@@ -127,8 +127,8 @@ tagsWrapper.innerHTML = html;
  //tagList.innerHTML = allTags.join(' ');
  let allTagsHTML = '';
  for(let tag in allTags){
-  allTagsHTML += tag + '(' + allTags[tag] +')'
-  //allTagsHTML += '<li><a href="#tag-' + tag + '">' + tag + '(' + allTags[tag] + ')</a></li>';
+  
+  allTagsHTML += '<li><a href="#tag-' + tag + '">' + tag +' ' +'(' + allTags[tag] + ')</a></li>';
   console.log(allTagsHTML);
  }
   
