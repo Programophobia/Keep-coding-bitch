@@ -195,6 +195,7 @@ console.log(generateTitleLinks);
 //AUTHORS
 
 function generateAuthors() {
+  const authorss = []
   const authors = document.querySelectorAll(optArticleSelector);
   for (let author of authors) {
     const authorList = author.querySelector(optArticleAuthorSelector);
@@ -203,6 +204,10 @@ function generateAuthors() {
     const linkHTML = '<a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a>';
     console.log(linkHTML);
     authorList.innerHTML = linkHTML;
+    if (!authorss.includes(articleAuthor)) {
+      authorss.push(articleAuthor);
+    }
+    
   } 
 }
 generateAuthors();
