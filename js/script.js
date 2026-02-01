@@ -207,9 +207,15 @@ function generateAuthors() {
     if (!authorss.includes(articleAuthor)) {
       authorss.push(articleAuthor);
     }
-    
+    const wraperSidebar = document.querySelector('.authors.list');
+    let html = '';
+    for (let author of authorss) {
+      html += '<li><a href="#author-' + author + '"><span>' + author + '</span></a></li>';
   } 
+  wraperSidebar.innerHTML = html;
 }
+}
+
 generateAuthors();
 console.log(generateAuthors); 
 
